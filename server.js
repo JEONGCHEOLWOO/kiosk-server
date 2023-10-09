@@ -33,7 +33,7 @@ app.use(express.urlencoded({ extended: true })); // 요청 body의 URL-encoded �
 
 app.get("/", function (req, res) {
   // 서버에 출력
-  res.send("Express 서버 작동 중");
+  res.send("최광혁 바보");
   // 터미널 콘솔에 출력
   console.log("Connected to express server");
 });
