@@ -8,10 +8,10 @@ const express = require("express"); // express 임포트
 const morgan = require("morgan"); // morgan(모건) 임포트
 const moment = require("moment-timezone"); // moment-timezone 임포트
 const cors = require("cors"); // cors 임포트
-const userRouter = require("./routers/userRouter"); // userRouter 임포트
-const menuRouter = require("./routers/menuRouter"); // menuRouter 임포트
-const orderRouter = require("./routers/orderRouter"); // orderRouter 임포트
-const payRouter = require("./routers/payRouter"); // payRouter 임포트
+// const userRouter = require("./src/routers/userRouter"); // userRouter 임포트
+// const menuRouter = require("./src/routers/menuRouter"); // menuRouter 임포트
+// const orderRouter = require("./src/routers/orderRouter"); // orderRouter 임포트
+// const payRouter = require("./src/routers/payRouter"); // payRouter 임포트
 
 const app = express(); // app 생성 => 서버 생성
 
@@ -39,9 +39,9 @@ app.get("/", function (req, res) {
 });
 
 //-------------------------------
-app.use("/pay", payRouter);
-app.use("/user", userRouter);
-app.use("/menu", menuRouter);
-app.use("/order", orderRouter);
+// app.use("/pay", payRouter);
+// app.use("/user", userRouter);
+// app.use("/menu", menuRouter);
+// app.use("/order", orderRouter);
 
-export default app;
+module.exports = app;

@@ -1,6 +1,6 @@
 const dotenv = require("dotenv/config");
 const db = require("./db");
-const server = require("./server");
+const app = require("./server");
 
 const port = process.env.port || 8000; // 서버 포트 번호
 
