@@ -1,7 +1,7 @@
 import "regenerator-runtime";
 import "dotenv/config";
-import "/kiosk-server/kiosk-server/db.js";
-import app from "/kiosk-server/kiosk-server/server.js";
+import "./db.js";
+import app from "./server.js";
 
 const port = process.env.port || 8000; // 서버 포트 번호
 
