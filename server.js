@@ -4,14 +4,15 @@
 // logging(로깅): 무슨일이 어디에서 일어났는지를 기록하는 것
 // CORS(Cross-Origin Resource Sharing, 크록스): 자신이 속하지 않은 다른 도메인, 다른 프로토콜, 혹은 다른 포트에 있는 리소스를 요청하는 cross-origin HTTP 요청 방식
 
-const express = require("express"); // express 임포트
-const morgan = require("morgan"); // morgan(모건) 임포트
-const moment = require("moment-timezone"); // moment-timezone 임포트
-const cors = require("cors"); // cors 임포트
-// const userRouter = require("./src/routers/userRouter"); // userRouter 임포트
-// const menuRouter = require("./src/routers/menuRouter"); // menuRouter 임포트
-// const orderRouter = require("./src/routers/orderRouter"); // orderRouter 임포트
-// const payRouter = require("./src/routers/payRouter"); // payRouter 임포트
+import express from "express"; // express 임포트
+import morgan from "morgan"; // morgan(모건) 임포트
+import moment from "moment-timezone"; // moment-timezone 임포트
+import cors from "cors"; // cors 임포트
+import userRouter from "./src/routers/userRouter.js"; // userRouter 임포트
+import menuRouter from "./src/routers/menuRouter.js"; // menuRouter 임포트
+import orderRouter from "./src/routers/orderRouter.js"; // orderRouter 임포트
+import payRouter from "./src/routers/payRouter.js"; // payRouter 임포트
+import testRouter from "./src/controllers/uploadController.js";
 
 const app = express(); // app 생성 => 서버 생성
 
@@ -33,15 +34,17 @@ app.use(express.urlencoded({ extended: true })); // 요청 body의 URL-encoded �
 
 app.get("/", function (req, res) {
   // 서버에 출력
-  res.send("최광혁 바보");
+  res.send("Express 서버 작동 중");
   // 터미널 콘솔에 출력
   console.log("Connected to express server");
 });
 
 //-------------------------------
-// app.use("/pay", payRouter);
-// app.use("/user", userRouter);
-// app.use("/menu", menuRouter);
-// app.use("/order", orderRouter);
+app.use("/pay", payRouter);
+app.use("/user", userRouter);
+app.use("/menu", menuRouter);
+app.use("/order", orderRouter);
 
-module.exports = app;
+app.use("/test", testRouter);
+
+export default app;

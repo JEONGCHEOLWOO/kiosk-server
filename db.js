@@ -1,8 +1,9 @@
-const mongoose = require("mongoose"); // 몽구스 임포트 -> DB
+import mongoose from "mongoose"; // 몽구스 임포트 -> DB
 
 // MongoDB 연결 정보 설정
-const dbURL = process.env.DB_URL || "mongodb://svc.sel5.cloudtype.app:32110";
-//mongodb://admin:admin@svc.sel5.cloudtype.app:32110/?directConnection=true&authMechanism=DEFAULT
+const dbURL =
+  "mongodb://admin:admin@svc.sel5.cloudtype.app:32110/?directConnection=true&authMechanism=DEFAULT" ||
+  "mongodb://svc.sel5.cloudtype.app:32110";
 
 mongoose.connect(dbURL, {
   useNewUrlParser: true,

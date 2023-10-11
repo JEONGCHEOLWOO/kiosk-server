@@ -1,24 +1,32 @@
 {
   "name": "kiosk-project",
   "version": "0.0.0",
+  "type": "module",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node init.js"
   },
   "dependencies": {
+    "@ffmpeg/core": "^0.8.5",
+    "@ffmpeg/ffmpeg": "^0.9.7",
+    "@google-cloud/storage": "^7.2.0",
     "chokidar": "^3.5.3",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "firebase-admin": "^11.10.1",
     "http-errors": "~1.6.3",
     "moment-timezone": "^0.5.43",
     "mongoose": "^7.6.0",
     "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
     "node": "^20.7.0",
     "nunjucks": "^3.2.3",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "regenerator-runtime": "^0.14.0",
+    "webpack": "^5.88.2"
   },
   "description": "Express로 구현된 Node.js 백엔드 어플리케이션 템플릿입니다.\r ## 🖇️ 준비 및 확인사항",
   "main": "init.js",
