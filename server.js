@@ -16,6 +16,9 @@ import testRouter from "./src/controllers/uploadController.js";
 
 const app = express(); // app 생성 => 서버 생성
 
+app.use(express.json()); // 요청 body의 json 데이터를 파싱
+app.use(express.urlencoded({ extended: true })); // 요청 body의 URL-encoded 데이터를 파싱
+
 app.use(cors()); // 모든 도메인에서 제한 없이 해당 서버에 요청을 보내고 응답을 받을 수 있음
 
 app.use(
@@ -28,9 +31,6 @@ app.use(
     )} ${tokens.status(req, res)} ${tokens["response-time"](req, res)} ms`;
   })
 );
-
-app.use(express.json()); // 요청 body의 json 데이터를 파싱
-app.use(express.urlencoded({ extended: true })); // 요청 body의 URL-encoded 데이터를 파싱
 
 app.get("/", function (req, res) {
   // 서버에 출력
