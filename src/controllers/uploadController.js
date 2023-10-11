@@ -5,15 +5,16 @@ import path from "path";
 import admin from "firebase-admin";
 import { Storage } from "@google-cloud/storage";
 import dotenv from "dotenv";
-import fs from "fs"; // 파일 시스템 모듈 추가
 
 // .env 설정 파일을 로드합니다.
 dotenv.config();
 
 // Firebase Admin SDK에 사용할 인증 정보를 설정합니다.
-const firebaseConfig = JSON.parse(
-  fs.readFileSync("order-d87d5-firebase-adminsdk-wfonf-a75c1d3726.json")
-);
+const firebaseConfig = {
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  client_email: process.env.FIREBASE_CLIENT_EMAIL,
+  private_key: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+};
 
 // Firebase 초기화
 admin.initializeApp({
