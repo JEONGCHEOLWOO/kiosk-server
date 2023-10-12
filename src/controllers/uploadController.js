@@ -81,7 +81,6 @@ export const uploadSave = async (req, res, next) => {
 
   // 이 메모리에 저장된 파일을 클라우드 스토리지로 전송합니다.
   writeStream.end(buffer);
-  next();
 };
 
 export default testRouter;
